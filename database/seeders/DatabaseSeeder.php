@@ -22,8 +22,23 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('12345678'),
         ]);
 
+        User::factory()->create([
+            'name' => 'Maya User',
+            'email' => 'maya@fic20.com',
+            'password' => Hash::make('12345678'),
+        ]);
+
         $this->call([
             CompanySeeder::class,
+            RoleSeeder::class,
+            PermissionSeeder::class,
+            PermissionRoleSeeder::class,
+            DepartmentSeeder::class,
+            DesignationSeeder::class,
+            ShiftSeeder::class,
+            BasicSalarySeeder::class,
+            RoleUserSeeder::class,
+            HolidaySeeder::class,
         ]);
     }
 }
